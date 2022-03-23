@@ -29,9 +29,9 @@ def square(start, end):
     down()
     begin_fill()
 
-    for count in range(4):
-        forward(end.x - start.x)
-        left(90)
+    for count in range(4): #number of lines that are going to be drawn
+        forward(end.x - start.x) #Determines the length of each side
+        left(90) #angle of a square
 
     end_fill()
 
@@ -43,7 +43,18 @@ def circle(start, end):
 
 def rectangle(start, end):
     """Draw rectangle from start to end."""
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    for count in range(2): #Cicle that draws e lines each time, a large side and a short side
+        forward(end.x - start.x) #Determines the length of each large side
+        left(90) #angle of a square
+        forward((end.x - start.x) / 2)#Determines the length of each short side
+        left (90)
+
+    end_fill()
 
 
 def triangle(start, end):
