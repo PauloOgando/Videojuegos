@@ -19,13 +19,13 @@ aim = vector(0, -10)
 #Variable que guarda los colores en un vector
 colors = ['black', 'green', 'indigo', 'gold', 'slategrey']
 #Elige un elemento del vector aleatoriamente
-rand = randrange(0, 5)
+rand = randrange(0, 4)
 #Asigana el color aleatorio a la variable de color de la serpiente
 snake_color = colors[rand]
 #Asegura que los colores de la serpiente y la fruta no sean los mismos
 colors.pop(rand)
 #Elige un elemento del vector aleatoriamente, sin contar el ya usado para el color de la serpiente
-rand = randrange(0, 4)
+rand = randrange(0, 3)
 #Asigana el color aleatorio a la variable de color para comida
 fruit_color = colors[rand]
 
