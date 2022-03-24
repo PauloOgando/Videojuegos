@@ -41,7 +41,7 @@ def inside(head):
     """Return True if head inside boundaries."""
     return -200 < head.x < 190 and -200 < head.y < 190
 
-#Funcion para mover la comida aleatoriamente
+#Funcion para mover la comida aleatoriamente en los bordes
 def move_food():
 
     #Variable que determina el movimiento de la comida evitando que se salga de los bordes
