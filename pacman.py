@@ -1,12 +1,8 @@
 """Pacman, classic arcade game.
 
-Exercises
-
-1. Change the board.
-2. Change the number of ghosts.
-3. Change where pacman starts.
-4. Make the ghosts faster/slower.
-5. Make the ghosts smarter.
+authors:
+Paulo Ogando Gulias                  A01751587
+Christian Parrish Gutiérrez Arrieta  A01751584
 """
 
 from random import choice
@@ -132,19 +128,89 @@ def move():
     dot(20, 'yellow')
 
     for point, course in ghosts:
-        if valid(point + course):
-            point.move(course)
+        if (point.x < pacman.x):
+            plan = vector(5, 0)
+            course.x = plan.x
+            course.y = plan.y
+            if valid(point + course):
+                point.move(course)
+            else:
+                options = [
+                    vector(0, 5),
+                    vector(0, -5),
+                    vector(-5, 0),
+                ]
+                plan = choice(options)
+                course.x = plan.x
+                course.y = plan.y
+                if valid(point + course):
+                    point.move(course)
+
+        elif (point.y < pacman.y):
+            plan = vector(0, 5)
+            course.x = plan.x
+            course.y = plan.y
+            if valid(point + course):
+                point.move(course)
+            else:
+                options = [
+                    vector(5, 0),
+                    vector(0, -5),
+                    vector(-5, 0),
+                ]
+                plan = choice(options)
+                course.x = plan.x
+                course.y = plan.y
+                if valid(point + course):
+                    point.move(course)
+
+        elif (point.x > pacman.x):
+            plan = vector(-5, 0)
+            course.x = plan.x
+            course.y = plan.y
+            if valid(point + course):
+                point.move(course)
+            else:
+                options = [
+                    vector(5, 0),
+                    vector(0, -5),
+                    vector(0, 5),
+                ]
+                plan = choice(options)
+                course.x = plan.x
+                course.y = plan.y
+                if valid(point + course):
+                    point.move(course)
+
+        elif (point.y > pacman.y):
+            plan = vector(0, -5)
+            course.x = plan.x
+            course.y = plan.y
+            if valid(point + course):
+                point.move(course)
+            else:
+                options = [
+                    vector(5, 0),
+                    vector(0, 5),
+                    vector(-5, 0),
+                ]
+                plan = choice(options)
+                course.x = plan.x
+                course.y = plan.y
+                if valid(point + course):
+                    point.move(course)
         else:
-            #Ghosts movement speed
             options = [
-                vector(10, 0),
-                vector(-10, 0),
-                vector(0, 10),
-                vector(0, -10),
+                    vector(5, 0),
+                    vector(0, 5),
+                    vector(-5, 0),
+                    vector(0, -5),
             ]
             plan = choice(options)
             course.x = plan.x
             course.y = plan.y
+            if valid(point + course):
+                point.move(course)
 
         up()
         goto(point.x + 10, point.y + 10)
