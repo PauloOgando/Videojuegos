@@ -127,6 +127,8 @@ def move():
     goto(pacman.x + 10, pacman.y + 10)
     dot(20, 'yellow')
 
+# Los fantasmas se acercan a  pacman al detectarlo en la posicion cercana
+
     for point, course in ghosts:
         if (point.x < pacman.x):
             plan = vector(5, 0)
