@@ -98,7 +98,7 @@ def draw():
 
     hidden = hide.count(True) # Variable counts the number of cards missing to find
     found = 64 - hidden     # Variable with the cards found
-    print("PAIRS FOUND ", hidden) # Shows the pairs found
+    print("CARDS FOUND ", found) # Shows the pairs found
 
     # Shows the messages when you finish the game
     if hidden == 0:
@@ -116,7 +116,7 @@ def draw():
     ontimer(draw, 100)
 
 
-#shuffle(tiles)
+shuffle(tiles)
 setup(420, 420, 370, 0)
 addshape(car)
 hideturtle()
