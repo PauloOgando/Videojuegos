@@ -51,6 +51,7 @@ def move():
         target = vector(200, y)
         targets.append(target)
 
+# Keeps the game in loop 
     for target in targets:
         target.x -= 0.5
         if target.x == -170:
