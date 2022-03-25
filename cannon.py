@@ -11,7 +11,7 @@ from turtle import *
 from freegames import vector
 
 ball = vector(-200, -200)
-speed = vector(5, 5) # Increases ball speed
+speed = vector(8, 8) # Increases ball speed
 targets = []
 
 
@@ -52,7 +52,9 @@ def move():
         targets.append(target)
 
     for target in targets:
-        target.x -= 1.5   # Increases target speed
+        target.x -= 0.5
+        if target.x == -170:
+            target.x = 170
 
     if inside(ball):
         speed.y -= 0.35
@@ -71,7 +73,7 @@ def move():
         if not inside(target):
             return
 
-    ontimer(move, 50)
+    ontimer(move, 20) # Increases ball and targets speed
 
 
 setup(420, 420, 370, 0)
